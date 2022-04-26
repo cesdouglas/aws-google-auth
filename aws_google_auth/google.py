@@ -423,6 +423,9 @@ class Google:
         payload['checkConnection'] = 'youtube:574:1'
         payload['Email'] = self.config.username
 
+        if self.config.bg_response:
+            payload['bgresponse'] = self.config.bg_response
+
         response = self.post(passwd_challenge_url, data=payload)
 
         newPayload = {}
